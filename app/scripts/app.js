@@ -18,7 +18,7 @@ angular
      'ngTouch',
      'mgcrea.ngStrap'
   ])
-  .config(function ($routeProvider) {
+   .config(function ($routeProvider, $sceDelegateProvider) {
     $routeProvider
       .when('/dashboard', {
         templateUrl: 'views/dashboard.html',
@@ -32,4 +32,8 @@ angular
       .otherwise({
         redirectTo: '/dashboard'
       });
+    $sceDelegateProvider.resourceUrlWhitelist([
+        'self',
+        'http://query.yahooapis.com/**'
+      ]);
   });

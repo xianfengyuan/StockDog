@@ -7,7 +7,7 @@
  * # stkStockRow
  */
 angular.module('stockDogApp')
-  .directive('stkStockRow', function () {
+   .directive('stkStockRow', function ($timeout, QuoteService) {
     return {
       restrict: 'A',
       require: '^stkStockTable',
